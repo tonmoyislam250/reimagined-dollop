@@ -19,5 +19,5 @@ jobs:
         sudo cp sources.list /etc/apt/
         sudo apt update -y
         cd qbit
-        sudo apt source qBittorrent
+        sudo apt source qbittorrent-nox
         ls -la
