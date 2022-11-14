@@ -14,7 +14,8 @@ jobs:
         sudo apt update -y
         sudo apt upgrade -y
         echo $LOGNAME
-        sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts && sudo sbuild-adduser $LOGNAME
+        sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts
+        sudo sbuild-adduser $LOGNAME
         sudo cp .sbuildrc ~/
         sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.us.debian.org/debian
      - run: echo "One last message"
