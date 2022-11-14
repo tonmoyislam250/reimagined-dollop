@@ -16,7 +16,7 @@ jobs:
         newgrp sbuild
         sudo sbuild-update -udcar u
         mkdir qbit
-        cp sources.list /etc/
+        sudo cp sources.list /etc/
         sudo apt update -y
         cd qbit
         sudo apt source qBittorrent
