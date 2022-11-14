@@ -8,18 +8,12 @@ jobs:
     steps:
      - uses: actions/checkout@v1
      - run: |
-        echo "A initial message"
-        whoami
-        echo "Another message or command"
         sudo apt update -y
         sudo apt upgrade -y
-        echo $LOGNAME
         sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts debian-archive-keyring debian-keyring
         sudo cp --verbose .sbuildrc ~/
         sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.us.debian.org/debian
         sudo sbuild-adduser runner
         newgrp sbuild
         sudo sbuild-update -udcar u
-        cd /
-        sudo tar -cvpzf backup.tar.gz --exclude=/backup.tar.gz --one-file-system / 
-     - run: echo "One last message"
+        ls -la && mkdir package && and cd package && mkdir qbit && cat /etc/apt/sources.list
