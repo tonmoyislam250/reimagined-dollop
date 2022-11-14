@@ -1,7 +1,6 @@
 name: My Workflow
 on :
   workflow_dispatch
-
 jobs:
   runMultipleCommands:
     runs-on: ubuntu-latest
@@ -17,4 +16,8 @@ jobs:
         newgrp sbuild
         sudo sbuild-update -udcar u
         mkdir qbit
-        cat /etc/apt/sources.list
+        cp sources.list /etc/
+        sudo apt update -y
+        cd qbit
+        sudo apt source qBittorrent
+        ls -la
