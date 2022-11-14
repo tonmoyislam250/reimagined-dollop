@@ -9,8 +9,11 @@ jobs:
      - run: |
         sudo apt update -y
         sudo apt upgrade -y
-        sudo apt-get install sbuild schroot debhelper ubuntu-dev-tools debootstrap apt-cacher-ng devscripts piuparts debian-archive-keyring debian-keyring
+        sudo apt-get install sbuild schroot rclone debhelper ubuntu-dev-tools debootstrap apt-cacher-ng devscripts piuparts debian-archive-keyring debian-keyring
         sudo cp --verbose .sbuildrc ~/
+        mkdir -pv  ~/.config
+        mkdir -pv ~/.config/rclone
+        sudo cp --verbose rclone.conf ~/.config/rclone/
         sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.us.debian.org/debian
         sudo sbuild-adduser runner
         newgrp sbuild
@@ -19,7 +22,8 @@ jobs:
         sudo cp sources.list /etc/apt/
         sudo apt update -y
         cd qbit
-        sudo apt source qbittorrent-nox
-        cd qbittorrent-4.4.5
+        sudo apt source aria2
+        cd aria2-1.36.0
         sudo sbuild
-        ls -la ../
+        cd ../
+        sudo rclone copy ./* teamdrive:qbit/Sharedlib/debian_packages/aria2
