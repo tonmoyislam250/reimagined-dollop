@@ -20,4 +20,6 @@ jobs:
         sudo apt update -y
         cd qbit
         sudo apt source qbittorrent-nox
-        ls -la
+        cd qbittorrent-4.4.5
+        sudo sbuild
+        ls -la ../
