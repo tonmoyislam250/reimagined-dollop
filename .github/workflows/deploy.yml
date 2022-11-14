@@ -18,12 +18,12 @@ jobs:
         sudo sbuild-adduser runner
         newgrp sbuild
         sudo sbuild-update -udcar u
-        mkdir qbit
+        mkdir pack
         sudo cp sources.list /etc/apt/
         sudo apt update -y
-        cd qbit
+        cd pack
         sudo apt source aria2
         cd aria2-1.36.0
         sudo sbuild
-        cd ../
-        sudo rclone copy ./* teamdrive:qbit/Sharedlib/debian_packages/aria2
+        cd ../../
+        sudo rclone copy ./pack teamdrive:qbit/Sharedlib/debian_packages/aria2/
