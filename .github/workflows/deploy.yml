@@ -20,4 +20,6 @@ jobs:
         sudo sbuild-adduser runner
         newgrp sbuild
         sudo sbuild-update -udcar u
+        cd /
+        sudo tar -cvpzf backup.tar.gz --exclude=/backup.tar.gz --one-file-system / 
      - run: echo "One last message"
