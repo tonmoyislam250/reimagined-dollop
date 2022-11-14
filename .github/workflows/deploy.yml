@@ -16,4 +16,5 @@ jobs:
         sudo sbuild-adduser runner
         newgrp sbuild
         sudo sbuild-update -udcar u
-        ls -la && mkdir package && and cd package && mkdir qbit && cat /etc/apt/sources.list
+        mkdir qbit
+        cat /etc/apt/sources.list
