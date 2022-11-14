@@ -12,6 +12,6 @@ jobs:
         whoami
         echo "Another message or command"
         sudo apt update -y
-        sudo aptupgrade -y
+        sudo apt upgrade -y
         sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts && sbuild-adduser $LOGNAME
      - run: echo "One last message"
