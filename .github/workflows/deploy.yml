@@ -11,6 +11,5 @@ jobs:
         echo "A initial message"
         whoami
         echo "Another message or command"
-        python myscript.py
-        bash some-shell-script-file.sh -xe
+        sudo apt update -y
      - run: echo "One last message"
