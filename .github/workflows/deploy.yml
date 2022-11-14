@@ -17,7 +17,7 @@ jobs:
         sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts debian-archive-keyring debian-keyring
         sudo cp --verbose .sbuildrc ~/
         sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.us.debian.org/debian
-        sudo sbuild-adduser $LOGNAME
+        sudo sbuild-adduser runner
         newgrp sbuild
         sudo sbuild-update -udcar u
      - run: echo "One last message"
