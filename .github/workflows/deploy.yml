@@ -1,6 +1,6 @@
 name: My Workflow
 
-on: workflow-dispatch
+on: workflow-dispatch:
 
 jobs:
   runMultipleCommands:
