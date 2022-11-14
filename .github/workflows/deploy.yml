@@ -13,6 +13,7 @@ jobs:
         echo "Another message or command"
         sudo apt update -y
         sudo apt upgrade -y
-        sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts && sbuild-adduser $LOGNAME
+        echo $LOGNAME
+        sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts && sudo sbuild-adduser $LOGNAME
         sudo cp .sbuildrc ~/
      - run: echo "One last message"
