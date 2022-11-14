@@ -9,7 +9,7 @@ jobs:
      - run: |
         sudo apt update -y
         sudo apt upgrade -y
-        sudo apt-get install sbuild schroot debootstrap apt-cacher-ng devscripts piuparts debian-archive-keyring debian-keyring
+        sudo apt-get install sbuild schroot debhelper ubuntu-dev-tools debootstrap apt-cacher-ng devscripts piuparts debian-archive-keyring debian-keyring
         sudo cp --verbose .sbuildrc ~/
         sudo sbuild-createchroot --include=eatmydata,ccache unstable /srv/chroot/unstable-amd64-sbuild http://ftp.us.debian.org/debian
         sudo sbuild-adduser runner
